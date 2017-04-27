@@ -5,23 +5,24 @@
 
 ## Table of Contents
 
-  1. [Terminology](#terminology)
-    - [Rule Declaration](#rule-declaration)
-    - [Selectors](#selectors)
-    - [Properties](#properties)
-  1. [Sass](#sass)
-    - [Formatting](#formatting)
-    - [Comments](#comments)
-    - [OOCSS and BEM](#oocss-and-bem)
-    - [ID Selectors](#id-selectors)
-    - [JavaScript hooks](#javascript-hooks)
-    - [Border](#border)
-    - [Syntax](#syntax)
-    - [Ordering](#ordering-of-property-declarations)
-    - [Variables](#variables)
-    - [Mixins](#mixins)
-    - [Extend directive](#extend-directive)
-    - [Nested selectors](#nested-selectors)
+#### [1. Terminology](#terminology)
+  - [Rule Declaration](#rule-declaration)
+  - [Selectors](#selectors)
+  - [Properties](#properties)
+
+#### [2. Sass](#sass)
+  - [Formatting](#formatting)
+  - [Comments](#comments)
+  - [OOCSS and BEM](#oocss-and-bem)
+  - [ID Selectors](#id-selectors)
+  - [JavaScript hooks](#javascript-hooks)
+  - [Border](#border)
+  - [Syntax](#syntax)
+  - [Ordering](#ordering-of-property-declarations)
+  - [Variables](#variables)
+  - [Mixins](#mixins)
+  - [Extend directive](#extend-directive)
+  - [Nested selectors](#nested-selectors)
 
 
 ## Terminology
