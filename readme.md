@@ -69,8 +69,8 @@ Finally, properties are what give the selected elements of a rule declaration th
 ### Formatting
 
 * Use tabs for indentation, no spaces.
-* Prefer dashes over camelCasing in class names.
-    - Underscores and PascalCasing are okay (see [OOCSS and BEM](#oocss-and-bem) below).
+* Prefer camelCasing in class names.
+    - Underscores and dashes are okay (see [OOCSS and BEM](#oocss-and-bem) below).
 * Do not use ID selectors.
 * When using multiple selectors in a rule declaration, give each selector its own line.
 * In properties, put a space after, but not before, the `:` character.
@@ -78,7 +78,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 **Bad**
 
-```css
+```sass
 .avatar
     border-radius:50%
     border:2px solid white
@@ -92,7 +92,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 **Good**
 
-```css
+```sass
 .avatar
   border-radius: 50%
   border: 2px solid white
@@ -114,7 +114,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ### OOCSS and BEM
 
-We encourage some combination of OOCSS and BEM for these reasons:
+We are using some combination of OOCSS and BEM for these reasons:
 
   * It helps create clear, strict relationships between CSS and HTML
   * It helps us create reusable, composable components
@@ -131,38 +131,31 @@ We encourage some combination of OOCSS and BEM for these reasons:
   * CSS Trick's [BEM 101](https://css-tricks.com/bem-101/)
   * Harry Roberts' [introduction to BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
-We recommend a variant of BEM with PascalCased “blocks”, which works particularly well when combined with components (e.g. React). Underscores and dashes are still used for modifiers and children.
+We recommend a variant of BEM with camelCasing “blocks”. Underscores and dashes are still used **for modifiers and children**.
 
 **Example**
 
-```jsx
-// ListingCard.jsx
-function ListingCard() {
-  return (
-    <article class="ListingCard ListingCard--featured">
+```html
+<article class="listingCard listingCard--featured">
+  <h1 class="listingCard__title">Adorable 2BR in the sunny Mission</h1>
 
-      <h1 class="ListingCard__title">Adorable 2BR in the sunny Mission</h1>
-
-      <div class="ListingCard__content">
-        <p>Vestibulum id ligula porta felis euismod semper.</p>
-      </div>
-
-    </article>
-  );
-}
+  <div class="listingCard__content">
+    <p>Vestibulum id ligula porta felis euismod semper.</p>
+  </div>
+</article>
 ```
 
 ```sass
-/* ListingCard.sass */
-.ListingCard
-.ListingCard--featured
-.ListingCard__title
-.ListingCard__content
+/* listingCard.sass */
+.listingCard
+.listingCard--featured
+.listingCard__title
+.listingCard__content
 ```
 
-  * `.ListingCard` is the “block” and represents the higher-level component
-  * `.ListingCard__title` is an “element” and represents a descendant of `.ListingCard` that helps compose the block as a whole.
-  * `.ListingCard--featured` is a “modifier” and represents a different state or variation on the `.ListingCard` block.
+  * `.listingCard` is the “block” and represents the higher-level component
+  * `.listingCard__title` is an “element” and represents a descendant of `.listingCard` that helps compose the block as a whole.
+  * `.listingCard--featured` is a “modifier” and represents a different state or variation on the `.listingCard` block.
 
 
 ### ID selectors
@@ -178,7 +171,7 @@ Avoid binding to the same class in both your CSS and JavaScript. Conflating the 
 We recommend creating JavaScript-specific classes to bind to, suffixed with `--js`:
 
 ```html
-<button class="btn btn-primary request-to-book--js">Request to Book</button>
+<button class="button buttonPrimary requestToBook--js">Request to Book</button>
 ```
 
 ### Border
@@ -187,14 +180,14 @@ Use `0` instead of `none` to specify that a style has no border.
 
 **Bad**
 
-```css
+```sass
 .foo
   border: none
 ```
 
 **Good**
 
-```css
+```sass
 .foo
   border: 0
 ```
@@ -211,7 +204,7 @@ Use `0` instead of `none` to specify that a style has no border.
     List all standard property declarations, anything that isn't an `@include` or a nested selector.
 
     ```sass
-    .btn-green
+    .button--green
       background: green
       font-weight: bold
       // ...
@@ -223,7 +216,7 @@ Use `0` instead of `none` to specify that a style has no border.
     Grouping `@include`s at the end makes it easier to read the entire selector.
 
     ```sass
-    .btn-green
+    .button--green
       background: green
       font-weight: bold
       @include transition(background 0.5s ease)
@@ -237,7 +230,7 @@ Use `0` instead of `none` to specify that a style has no border.
     Add whitespace between your rule declarations and nested selectors, as well as between adjacent nested selectors. Apply the same guidelines as above to your nested selectors.
 
     ```sass
-    .btn
+    .button
       background: green
       font-weight: bold
       @include transition(background 0.5s ease)
@@ -266,7 +259,7 @@ Gzipping should handle most of the savings you would have gained by using `@exte
 **Do not nest selectors more than three levels deep!**
 
 ```sass
-.page-container
+.pageContainer
   .content
     .profile
       // STOP!
